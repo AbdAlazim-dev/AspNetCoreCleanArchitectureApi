@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoursesSolution.Ticket.TicketManagment.Domain\CoursesSolution.Ticket.TicketManagment.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

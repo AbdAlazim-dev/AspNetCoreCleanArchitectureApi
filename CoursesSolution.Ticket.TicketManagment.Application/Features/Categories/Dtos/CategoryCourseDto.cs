@@ -4,18 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoursesSolution.Ticket.TicketManagment.Domain.Entities;
+namespace CoursesSolution.Ticket.TicketManagment.Application.Features.Categories.Dtos;
 
-public class Course
+public class CategoryCourseDto
 {
     public Guid CourseId { get; set; }
     public string Name { get; set; } = string.Empty;
+    public string Author { get; set; }
     public decimal Price { get; set; }
-    public string? Author { get; set; }
     public DateTime Date { get; set; }
-    public string? Description { get; set; }
     public Guid CategoryId { get; set; }
-    public Category Category { get; set; } = default!;
-
-
 }

@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 
 namespace CoursesSolution.Ticket.TicketManagment.Application.Contracts.Persistence;
 
-internal interface ICourseRerpository : IAsyncRerository<Course>
+public interface ICourseRerpository : IAsyncRerository<Course>
 {
 }
