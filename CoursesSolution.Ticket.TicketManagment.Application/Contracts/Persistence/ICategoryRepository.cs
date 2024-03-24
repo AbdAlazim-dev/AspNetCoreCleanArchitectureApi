@@ -10,4 +10,5 @@ namespace CoursesSolution.Ticket.TicketManagment.Application.Contracts.Persisten
 public interface ICategoryRepository : IAsyncRerository<Category>
 {
     Task<List<Category>> GetCategoriesWithCourses(bool includeHistory);
+    Task<bool> IsCategoryNameUnique(string name);
 }

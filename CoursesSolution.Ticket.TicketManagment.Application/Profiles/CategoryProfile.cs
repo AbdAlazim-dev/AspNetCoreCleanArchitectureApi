@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CoursesSolution.Ticket.TicketManagment.Application.Features.Categories.Commands;
 using CoursesSolution.Ticket.TicketManagment.Application.Features.Categories.Dtos;
 using CoursesSolution.Ticket.TicketManagment.Application.Features.Courses.Dtos;
 using CoursesSolution.Ticket.TicketManagment.Domain.Entities;
@@ -17,5 +18,9 @@ public class CategoryProfile : Profile
         CreateMap<Category, CategoryDto>().ReverseMap();
         CreateMap<Category , CategoryListDto>().ReverseMap();
         CreateMap<Category, CategoryListWithCoursesDto>().ReverseMap();
+
+        //Commands 
+        CreateMap<Category, CreateCategoryCommand>().ReverseMap();
+        CreateMap<Category, CreateCategoryCommandResponse>().ReverseMap();
     }
 }

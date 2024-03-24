@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoursesSolution.Ticket.TicketManagment.Application.Features.Dtos
+namespace CoursesSolution.Ticket.TicketManagment.Application.Features.Courses.Dtos
 {
     public class CourseDto
     {

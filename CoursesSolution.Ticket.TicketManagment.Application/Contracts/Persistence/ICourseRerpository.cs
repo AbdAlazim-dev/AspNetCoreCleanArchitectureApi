@@ -9,4 +9,5 @@ namespace CoursesSolution.Ticket.TicketManagment.Application.Contracts.Persisten
 
 public interface ICourseRerpository : IAsyncRerository<Course>
 {
+    public Task<bool> IsCourseNameAndDateUniq(string name, DateTime date);
 }

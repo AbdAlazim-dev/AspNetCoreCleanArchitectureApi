@@ -10,5 +10,6 @@ namespace CoursesSolution.Ticket.TicketManagment.Application.Features.Categories
 {
     public class GetCategoryListQuery : IRequest<List<CategoryListDto>>
     {
+
     }
 }
