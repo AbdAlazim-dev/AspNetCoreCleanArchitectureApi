@@ -9,7 +9,7 @@ namespace CoursesSolution.Ticket.TicketManagment.Domain.Common;
 public class AuditableEntity
 {
     public string CreatedBy { get; set; } = string.Empty;
-    public DateTime Created { get; set; }
+    public DateTime CreatedAt { get; set; }
     public string? LastModifiedBy { get; set; }
     public DateTime? LastModified { get; set; }
 }

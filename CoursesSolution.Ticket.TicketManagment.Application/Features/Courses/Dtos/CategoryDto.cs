@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoursesSolution.Ticket.TicketManagment.Application.Features.Courses.Dtos
 {
-    public class CategoryDto
+    public class CourseCategoryDto
     {
         public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;

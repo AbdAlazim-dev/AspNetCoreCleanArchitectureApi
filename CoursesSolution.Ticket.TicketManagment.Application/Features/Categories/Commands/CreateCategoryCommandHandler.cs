@@ -44,11 +44,11 @@ public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryComman
             var categoryToCreate = new Category() { Name = request.Name };
 
             //add the entity to the database
-            await _categoryRepository.AddAsync(categoryToCreate);
+            var categoryEntity = await _categoryRepository.AddAsync(categoryToCreate);
 
             //create a response object to return
             createCategoryCommandResponse =
-                _mapper.Map<CreateCategoryCommandResponse>(categoryToCreate);
+                _mapper.Map<CreateCategoryCommandResponse>(categoryEntity);
         }
 
         return createCategoryCommandResponse;

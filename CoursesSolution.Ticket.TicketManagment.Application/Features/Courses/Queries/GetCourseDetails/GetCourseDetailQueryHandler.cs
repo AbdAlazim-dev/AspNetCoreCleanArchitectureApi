@@ -19,7 +19,7 @@ public class GetCourseDetailQueryHandler : IRequestHandler<GetCourseDetailQuery,
 
     public GetCourseDetailQueryHandler(IMapper mapper,
         IAsyncRerository<Course> courseRepository,
-        IAsyncRerository<CategoryDto> categoryRepository)
+        IAsyncRerository<CourseCategoryDto> categoryRepository)
     {
         _mapper = mapper;
         _courseRepository = courseRepository;
@@ -32,7 +32,7 @@ public class GetCourseDetailQueryHandler : IRequestHandler<GetCourseDetailQuery,
         var courseDetail = _mapper.Map<CourseDetailsDto>(course);
 
         var category = await _categoryRepository.GetByIdAsync(course.CategoryId);
-        var categoryDto = _mapper.Map<CategoryDto>(category);
+        var categoryDto = _mapper.Map<CourseCategoryDto>(category);
 
         courseDetail.Category = categoryDto;
 

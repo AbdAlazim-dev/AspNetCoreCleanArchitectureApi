@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoursesSolution.Ticket.TicketManagment.Application.Exceptions
+namespace CoursesSolution.Ticket.TicketManagment.Application.Exceptions;
+
+public class BadRequestException : Exception
 {
-    internal class BadRequestException
+    public BadRequestException(string message) : base(message)
     {
     }
 }
