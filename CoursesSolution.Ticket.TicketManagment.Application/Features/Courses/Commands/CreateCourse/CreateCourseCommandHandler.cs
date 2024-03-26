@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using CoursesSolution.Ticket.TicketManagment.Application.Contracts.Infrastruture;
 using CoursesSolution.Ticket.TicketManagment.Application.Contracts.Persistence;
+using CoursesSolution.Ticket.TicketManagment.Application.Models.Mail;
 using CoursesSolution.Ticket.TicketManagment.Domain.Entities;
 using MediatR;
 using System;
@@ -14,11 +16,15 @@ public class CreateCourseCommandHandler : IRequestHandler<CreateCourseCommand, G
 {
     private readonly ICourseRerpository _courseRerpository;
     private readonly IMapper _mapper;
-    private readonly CreateCourseCommandValidator _courseValidator;
-    public CreateCourseCommandHandler(ICourseRerpository courseRerpository, IMapper mapper)
+    private readonly IEmailService _emailService;
+    public CreateCourseCommandHandler(ICourseRerpository courseRerpository,
+        IMapper mapper,
+        IEmailService emailService)
     {
         _courseRerpository = courseRerpository;
         _mapper = mapper;
+        _emailService = emailService;
+        
     }
     public async Task<Guid> Handle(CreateCourseCommand request, CancellationToken cancellationToken)
     {
@@ -35,6 +41,21 @@ public class CreateCourseCommandHandler : IRequestHandler<CreateCourseCommand, G
 
         courseEntity = await _courseRerpository.AddAsync(courseEntity);
 
+        //sending email to the Admin
+        var email = new Email()
+        {
+            To = "Abdalazim@gmail.com",
+            Body = $"A new course was created: {request}",
+            Subject = "A new course was created"
+        };
+        try
+        {
+            _emailService.SendEmail(email);
+        } 
+        catch (Exception ex)
+        {
+            //the course will be created even if the email was not sent
+        }
         return courseEntity.CourseId;
     }
 }
