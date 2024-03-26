@@ -15,7 +15,6 @@ public class GetCourseDetailQueryHandler : IRequestHandler<GetCourseDetailQuery,
 {
     private readonly IMapper _mapper;
     private readonly IAsyncRerository<Course> _courseRepository;
-    private readonly IAsyncRerository<CategoryDto> _categoryRepository;
 
     public GetCourseDetailQueryHandler(IMapper mapper,
         IAsyncRerository<Course> courseRepository,
@@ -23,7 +22,6 @@ public class GetCourseDetailQueryHandler : IRequestHandler<GetCourseDetailQuery,
     {
         _mapper = mapper;
         _courseRepository = courseRepository;
-        _categoryRepository = categoryRepository;
     }
     public async Task<CourseDetailsDto> Handle(GetCourseDetailQuery request,
         CancellationToken cancellationToken)
@@ -31,7 +29,7 @@ public class GetCourseDetailQueryHandler : IRequestHandler<GetCourseDetailQuery,
         var course = await _courseRepository.GetByIdAsync(request.Id);
         var courseDetail = _mapper.Map<CourseDetailsDto>(course);
 
-        var category = await _categoryRepository.GetByIdAsync(course.CategoryId);
+        var category = await _courseRepository.GetByIdAsync(course.CategoryId);
         var categoryDto = _mapper.Map<CourseCategoryDto>(category);
 
         courseDetail.Category = categoryDto;

@@ -15,7 +15,7 @@ public class CategoryProfile : Profile
 {
     public CategoryProfile()
     {
-        CreateMap<Category, CategoryDto>().ReverseMap();
+        CreateMap<Category, CategoryCourseDto>().ReverseMap();
         CreateMap<Category , CategoryListDto>().ReverseMap();
         CreateMap<Category, CategoryListWithCoursesDto>().ReverseMap();
 

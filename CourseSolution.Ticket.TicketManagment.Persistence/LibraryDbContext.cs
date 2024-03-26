@@ -144,9 +144,12 @@ public class LibraryDbContext : DbContext
         
     }
 
+    // override the SaveChangesAsync method to update the CreatedAt and LastModified properties
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken 
         = new CancellationToken())
     {
+        // every entity that implements the IAuditableEntity will have the CreatedAt and LastModified properties
+        // updated when the entity is added or modified
         foreach(var entry in ChangeTracker.Entries<AuditableEntity>())
         {
             switch (entry.State)
