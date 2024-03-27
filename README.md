@@ -15,3 +15,5 @@ Nuget packages i used in the project
 - **Fluent Validation: Implemented to set complex validation rules.**
 - **Swagger: Utilized to expose the API endpoints.**
 - **Entity Framework Core: Employed as the ORM for data access.**
+---
+The infrastructure layer classes and implementations can be used by any other .NET project in this repository. I consumed them using ASP.NET Core Web API.
