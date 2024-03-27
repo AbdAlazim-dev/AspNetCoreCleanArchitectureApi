@@ -12,7 +12,7 @@ namespace CourseSolution.Ticket.TicketManagment.Infrastructure;
 
 public static class InfrastrutureServiceRegistration
 {
-    public static IServiceCollection RegisterInfrastrutureServices(
+    public static IServiceCollection AddInfrastrutureServices(
         this IServiceCollection services, IConfiguration configuration)
     {
         services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));

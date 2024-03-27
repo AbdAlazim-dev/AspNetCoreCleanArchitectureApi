@@ -11,7 +11,7 @@ namespace CoursesSolution.Ticket.TicketManagment.Application;
 public static class ApplicationServiceRegisteration
 {
     //this method will be used to register all the services in the application layer
-    public static IServiceCollection AddApplicationService(this IServiceCollection services)
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.AddMediatR(cfg => 

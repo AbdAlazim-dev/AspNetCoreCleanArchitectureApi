@@ -13,6 +13,9 @@ public class CourseConfiguration : IEntityTypeConfiguration<Course>
 {
     public void Configure(EntityTypeBuilder<Course> builder)
     {
+        builder.Property(c => c.Price)
+            .HasColumnType("decimal(18,2)");
+
         builder.Property(c => c.Name)
             .IsRequired()
             .HasMaxLength(50);

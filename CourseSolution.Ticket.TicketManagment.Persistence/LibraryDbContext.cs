@@ -24,38 +24,38 @@ public class LibraryDbContext : DbContext
         //apply the configuration in all assemply
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(LibraryDbContext).Assembly);
 
-        var cyperSecurityCategoryGuid = Guid.Parse("{B5A3D7A4-3D3A-4D3B-8D0A-5D3A3D3A3D3A}");
-        var artificialIntelligenceCategoryGuid = Guid.Parse("{B5A3D7A4-3D3A-4D3B-8D0A-5D3A3D3A3D3B}");
-        var mechineLearningcategoryGuid = Guid.Parse("{B5A3D7A4-3D3A-4D3B-8D0A-5D3A3D3A3D3C}");
-        var softwareEngineeringCategoryGuid = Guid.Parse("{B5A3D7A4-3D3A-4D3B-8D0A-5D3A3D3A3D3D}");
+        var cyperSecurityCategoryGuid = Guid.Parse("{4468990c-5382-4a04-b2eb-4ab9275e8d04}");
+        var artificialIntelligenceCategoryGuid = Guid.Parse("{14c1fae5-0639-4dd1-9b72-15d522ab394d}");
+        var machineLearningCategoryGuid = Guid.Parse("{3c11b904-afc8-4a78-92a9-96eafe236716}");
+        var softwareEngineeringCategoryGuid = Guid.Parse("{d4d0f53a-d69f-4a4c-b9a0-3739aaabce0d}");
 
         // seed the category data
         modelBuilder.Entity<Category>().HasData(
             new Category
             {
-                Id = cyperSecurityCategoryGuid,
+                CategoryId = cyperSecurityCategoryGuid,
                 Name = "Cyber Security"
             },
             new Category
             {
-                Id = artificialIntelligenceCategoryGuid,
+                CategoryId = artificialIntelligenceCategoryGuid,
                 Name = "Artificial Intelligence"
             },
             new Category
             {
-                Id = mechineLearningcategoryGuid,
+                CategoryId = machineLearningCategoryGuid,
                 Name = "Mechine Learning"
             },
             new Category
             {
-                Id = softwareEngineeringCategoryGuid,
+                CategoryId = softwareEngineeringCategoryGuid,
                 Name = "Software Engineering"
             }
         );
 
         modelBuilder.Entity<Course>().HasData(new Course()
         {
-            CourseId = Guid.Parse("{a139d77f-c482-4398-8844-6c253edefdc7}"),
+            CourseId = Guid.Parse("{47350736-8037-4e28-aa28-bece19b62d58}"),
             Name = "Introduction to Cyber Security",
             Price = 60.99m,
             CategoryId = cyperSecurityCategoryGuid,
@@ -66,7 +66,7 @@ public class LibraryDbContext : DbContext
 
         modelBuilder.Entity<Course>().HasData(new Course()
         {
-            CourseId = Guid.Parse("{c462d9e6-1895-413b-b919-5ed9291f7b9f}"),
+            CourseId = Guid.Parse("{c9424aef-44d4-41a6-bfda-987dbe051d87}"),
             Name = "Introduction to Web Development",
             Price = 60.99m,
             CategoryId = softwareEngineeringCategoryGuid,
@@ -76,17 +76,17 @@ public class LibraryDbContext : DbContext
         });
         modelBuilder.Entity<Course>().HasData(new Course()
         {
-            CourseId = Guid.Parse("{7c16490b-a16f-4453-86d1-a4411ad1acc4}"),
+            CourseId = Guid.Parse("{040313f6-c01e-4f9a-84b9-beb77673973e}"),
             Name = "Advanced Machine Learning",
             Price = 89.99m,
-            CategoryId = mechineLearningcategoryGuid,
+            CategoryId = machineLearningCategoryGuid,
             Author = "Mohanned Rashid",
             Date = DateTime.Now.AddMonths(2),
             Description = "Take your machine learning skills to the next level with this advanced course."
         });
         modelBuilder.Entity<Course>().HasData(new Course()
         {
-            CourseId = Guid.Parse("{d0d68073-83d0-4755-8831-01ea1a03e4b8}"),
+            CourseId = Guid.Parse("{77995a0c-3fdb-4b96-8e43-337eb638ea23}"),
             Name = "Mobile App Development",
             Price = 75.50m,
             CategoryId = softwareEngineeringCategoryGuid,
@@ -96,7 +96,7 @@ public class LibraryDbContext : DbContext
         });
         modelBuilder.Entity<Course>().HasData(new Course()
         {
-            CourseId = Guid.Parse("{d41db62d-d57d-4783-83bc-1042b048ef03}"),
+            CourseId = Guid.Parse("{583951e8-2221-477e-9e07-258fe5096478}"),
             Name = "Artificial Intelligence Fundamentals",
             Price = 65.75m,
             CategoryId = artificialIntelligenceCategoryGuid,
@@ -107,38 +107,38 @@ public class LibraryDbContext : DbContext
 
         modelBuilder.Entity<Order>().HasData(new Order()
         {
-            OrderId = Guid.Parse("{7fd5e071-3fbd-4b98-a0b2-41f75fa3bec1}"),
+            OrderId = Guid.Parse("{e30ff405-19d0-4288-9321-a63327197f3f}"),
             OrderTotal = 175,
             OrderPaid = false,
             OrderDate = DateTime.Now.AddHours(2),
-            UserId = Guid.Parse("{7fd5e071-3fbd-4b98-a0b2-41f75fa3bsc2}")
+            UserId = Guid.Parse("{13c35229-9be0-407e-8313-cf142d6b34c2}")
         });
 
         modelBuilder.Entity<Order>().HasData(new Order()
         {
-            OrderId = Guid.Parse("{7fd5e071-3fdd-4b98-c0b2-41f75fa3bec1}"),
+            OrderId = Guid.Parse("{dfa3a946-bc67-4073-8f34-24a36af67088}"),
             OrderTotal = 120,
             OrderPaid = false,
             OrderDate = DateTime.Now,
-            UserId = Guid.Parse("{7fs5e071-3fsd-4b98-a0b2-41f75fa3bsc2}")
+            UserId = Guid.Parse("{de0bdb7f-6dd2-48a4-8f59-553718064d2c}")
         });
 
         modelBuilder.Entity<Order>().HasData(new Order()
         {
-            OrderId = Guid.Parse("{2fd5e071-2fbd-4b98-a0b2-41f75fa3bec1}"),
+            OrderId = Guid.Parse("{7ec834cf-bc6b-453b-835d-520b439afb46}"),
             OrderTotal = 175,
             OrderPaid = false,
             OrderDate = DateTime.Now,
-            UserId = Guid.Parse("{1cd5e071-3fbd-4b98-a0b2-41f75fa3bsc2}")
+            UserId = Guid.Parse("{f6d34e22-f93a-4795-8cb9-76850608e9c4}")
         });
 
         modelBuilder.Entity<Order>().HasData(new Order()
         {
-            OrderId = Guid.Parse("{7fd5e071-3fdd-6f98-c0b2-41f75fa3bec1}"),
+            OrderId = Guid.Parse("{cf878c8b-0062-4760-9ff3-1e1b50c5ec00}"),
             OrderTotal = 120,
             OrderPaid = false,
             OrderDate = DateTime.Now,
-            UserId = Guid.Parse("{1fs5e071-3fsd-4b98-a0b2-11f15fa3bsc2}")
+            UserId = Guid.Parse("{1c47de68-219d-4802-9261-46df912438e2}")
         });
 
         
