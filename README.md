@@ -6,7 +6,7 @@ This project presents a Course Library API built on ASP .NET Core 8, adhering to
 - **Dependency Inversion**
 - **Separation of Concerns**
 - **DRY (Don't Repeat Yourself)**
-- **Preservation of Precedence**
+- **Persistence Ignorance**
 ---
 
 Nuget packages i used in the project 
