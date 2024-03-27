@@ -9,7 +9,8 @@ This project presents a Course Library API built on ASP .NET Core 8, adhering to
 - **Preservation of Precedence**
 </hr>
 Nuget packages i used in the project 
-- **IMediatR To achive CQSR and high level of seperation of Concern**
-- **Fluent Validation to set complex validation rule**
-- **Swagger to expose the api endpoint**
-- **Entity Framework Core as ORM and data access**
+
+IMediatR: Used to achieve CQRS and a high level of separation of concerns.
+Fluent Validation: Implemented to set complex validation rules.
+Swagger: Utilized to expose the API endpoints.
+Entity Framework Core: Employed as the ORM for data access.
