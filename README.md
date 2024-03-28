@@ -6,4 +6,14 @@ This project presents a Course Library API built on ASP .NET Core 8, adhering to
 - **Dependency Inversion**
 - **Separation of Concerns**
 - **DRY (Don't Repeat Yourself)**
-- **Preservation of Precedence**
+- **Persistence Ignorance**
+---
+
+Nuget packages i used in the project 
+
+- **IMediatR: Used to achieve CQRS and a high level of separation of concerns.**
+- **Fluent Validation: Implemented to set complex validation rules.**
+- **Swagger: Utilized to expose the API endpoints.**
+- **Entity Framework Core: Employed as the ORM for data access.**
+---
+The infrastructure layer classes and implementations can be used by any other .NET project in this repository. I consumed them using ASP.NET Core Web API.
