@@ -1,6 +1,7 @@
 ﻿using CourseSolution.Ticket.TicketManagment.Infrastructure;
 using CourseSolution.Ticket.TicketManagment.Persistence;
 using CoursesSolution.Ticket.TicketManagment.Application;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CourseSolution.Ticket.TicketManagment.Api;
@@ -10,10 +11,15 @@ public static class StartUpExtensions
     public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
     {
         builder.Services
+            .AddSwaggerGen()
             .AddApplicationServices()
             .AddInfrastrutureServices(builder.Configuration)
             .AddPersistenceServices(builder.Configuration)
-            .AddControllers();
+            .AddControllers(config =>
+            {
+                config.Filters.Add(new ProducesResponseTypeAttribute(StatusCodes.Status404NotFound));
+                config.Filters.Add(new ProducesResponseTypeAttribute(StatusCodes.Status500InternalServerError));
+            });
 
         return builder.Build();
     }
@@ -21,6 +27,8 @@ public static class StartUpExtensions
     {
         app.UseHttpsRedirection();
         app.MapControllers();
+        app.UseSwagger();
+        app.UseSwaggerUI();
         return app;
     }
     //reset the database when the application starts for testing Development purposes
